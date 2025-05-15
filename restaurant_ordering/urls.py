@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from restaurant_ordering import views
+
+app_name = 'restaurant_ordering'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='home'),
+    path('menu/', views.menu, name='menu'),
+    path('orders/', views.orders, name='orders'),
 ]

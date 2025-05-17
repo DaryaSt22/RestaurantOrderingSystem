@@ -15,17 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from restaurant_ordering import views
+from django.views.generic import TemplateView
 
 app_name = 'restaurant_ordering'
 
 urlpatterns = [
+    re_path(r'^menu/', views.menu, name='menu'),
+    re_path(r'^orders/', views.orders, name='orders'),
+    re_path(r'^users/', include('users.urls')),
+    re_path(r'^accounts/', include('django.contrib.auth.urls')),
+    # path('', views.index, name="Pedro's online restaurant"),
     path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
-    path('menu/', views.menu, name='menu'),
-    path('orders/', views.orders, name='orders'),
-    path('users/', include('users.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path()
+    path('', TemplateView.as_view(template_name="index.html")),
 ]

@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from users.forms import LoginUserForm
 
 
 def index(request):
@@ -9,3 +11,8 @@ def menu(request):
 
 def orders(request):
     return HttpResponse("<h1>History orders</h1>")
+
+
+def login_user(request):
+    form = LoginUserForm()
+    return render(request, 'registration/login.html', {'form': 'form'})

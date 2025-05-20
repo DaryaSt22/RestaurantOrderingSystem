@@ -22,11 +22,16 @@ from django.views.generic import TemplateView
 app_name = 'restaurant_ordering'
 
 urlpatterns = [
-    re_path(r'^menu/', views.menu, name='menu'),
-    re_path(r'^orders/', views.orders, name='orders'),
+    #re_path(r'^menu/', views.menu, name='menu'),
+    #re_path(r'^orders/', views.orders, name='orders'),
     re_path(r'^users/', include('users.urls')),
     re_path(r'^accounts/', include('django.contrib.auth.urls')),
     # path('', views.index, name="Pedro's online restaurant"),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="index.html")),
+    path('login/<int:id>/', TemplateView.as_view(template_name="login.html")),
+    re_path(r'^login/', views.login_user, name='login'),
+    #path('register/<int:id>/', TemplateView.as_view(template_name="users/register.html")),
+    re_path(r'^menu/', TemplateView.as_view(template_name="menu.html")),
+    re_path(r'^orders/', TemplateView.as_view(template_name="orders.html")),
 ]

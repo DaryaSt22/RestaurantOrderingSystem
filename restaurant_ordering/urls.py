@@ -29,9 +29,9 @@ urlpatterns = [
     # path('', views.index, name="Pedro's online restaurant"),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="index.html")),
-    path('login/<int:id>/', TemplateView.as_view(template_name="login.html")),
-    re_path(r'^login/', views.login_user, name='login'),
-    #path('register/<int:id>/', TemplateView.as_view(template_name="users/register.html")),
+    path('login_user/<int:id>/', TemplateView.as_view(template_name="login.html")),
+    re_path(r'^login/', views.login, name='login'),
+    path('register/<int:id>/', TemplateView.as_view(template_name="users/register.html")),
     re_path(r'^menu/', TemplateView.as_view(template_name="menu.html")),
     re_path(r'^orders/', TemplateView.as_view(template_name="orders.html")),
 ]

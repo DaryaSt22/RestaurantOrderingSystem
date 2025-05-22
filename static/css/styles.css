@@ -1,3 +1,5 @@
-body{ font-family: Verdana, sans-serif}
+* {padding: 0; margin: 0}
+body{ font-family: Verdana, sans-serif, pedro.png-image: url('pedro.png');
 h1{color:navy;}
-img{width:80vw;}
+img{width:100vw;}
+

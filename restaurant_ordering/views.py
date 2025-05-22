@@ -13,6 +13,6 @@ def orders(request):
     return HttpResponse("<h1>History orders</h1>")
 
 
-def login_user(request):
+def login(request):
     form = LoginUserForm()
     return render(request, 'registration/login.html', {'form': 'form'})

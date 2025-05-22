@@ -55,8 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'restaurant_ordering.urls'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/users/login/'
 
 TEMPLATES = [
     {
